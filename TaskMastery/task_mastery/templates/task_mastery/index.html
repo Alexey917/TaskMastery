@@ -1,3 +1,13 @@
 {% extends "task_mastery/base.html" %}
+{% load static %}
 
 {% block title %}Главная{% endblock title %}
+
+{% block nav %}
+  <a href="#">
+    TaskMastery
+    <svg class="logo-icon">
+      <use href="{% static 'task_mastery/img/sprite.svg#logo' %}"></use>
+    </svg>
+  </a>
+{% endblock nav %}

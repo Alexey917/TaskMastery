@@ -10,8 +10,12 @@
     <title>{% block title %}{% endblock title %}</title>
   </head>
 
-  <body>
-    
+  <body class="bg-body">
+    <header>
+      <nav>
+        {% block nav %}{% endblock nav %}
+      </nav>
+    </header>
     
     <script src="js/main.js" ></script>
   </body>
