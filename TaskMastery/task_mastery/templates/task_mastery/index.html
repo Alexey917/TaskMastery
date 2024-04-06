@@ -4,10 +4,11 @@
 {% block title %}Главная{% endblock title %}
 
 {% block nav %}
-  <a href="#">
-    TaskMastery
+  <div class="logo">
+    <a href="#" class="header-logo">TaskMastery</a>
     <svg class="logo-icon">
-      <use href="{% static 'task_mastery/img/sprite.svg#logo' %}"></use>
+      <use href="{% static 'task_mastery/img/sprite.svg' %}#logo"></use>
     </svg>
-  </a>
+  </div>
+  
 {% endblock nav %}
