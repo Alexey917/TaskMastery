@@ -3,12 +3,28 @@
 
 {% block title %}Главная{% endblock title %}
 
-{% block nav %}
-  <div class="logo">
-    <a href="#" class="header-logo">TaskMastery</a>
-    <svg class="logo-icon">
-      <use href="{% static 'task_mastery/img/sprite.svg' %}#logo"></use>
-    </svg>
-  </div>
-  
-{% endblock nav %}
+{% block headerMain %}
+  <header class="header-task-mastery">
+    <nav class="nav-task-mastery">
+      <div class="logo">
+        <a href="#" class="header-logo">TaskMastery</a>
+        <svg class="logo-icon">
+          <use href="{% static 'task_mastery/img/sprite.svg' %}#logo"></use>
+        </svg>
+      </div>
+
+      <button class="logIn">Войти</button>
+    </nav>
+  </header>
+{% endblock headerMain %}
+
+
+{% block introductorySection %}
+  <section>
+    <p>
+      TaskMastery - ваш надежный помощник в эффективном управлении задачами и проектами
+    </p>
+    <button></button>
+    <button></button>
+  </section>
+{% endblock introductorySection %}
