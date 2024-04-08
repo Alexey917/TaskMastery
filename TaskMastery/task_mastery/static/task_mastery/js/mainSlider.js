@@ -6,19 +6,28 @@ const sliderBtnPrev = document.querySelector(".slider-btn-prev");
 let counter = 0;
 const slider = [];
 
-// section.forEach((element) => {
-//   slider.push(element);
-// });
 
-// mainTaskMastery.innerHTML = section[0];
+sliderBtnPrev.classList.add("section-hiiden");
+
+function checkSlider() {
+  if (counter === section.length - 1) {
+    sliderBtnNext.classList.add("section-hiiden");
+  } else {
+    sliderBtnNext.classList.remove("section-hiiden");
+  }
+
+  if (counter === 0) {
+    sliderBtnPrev.classList.add("section-hiiden");
+  } else {
+    sliderBtnPrev.classList.remove("section-hiiden");
+  }
+}
 
 function displaySection() {
   for (let i = 0; i < section.length; i++) {
     i !== counter
       ? section[i].classList.add("section-hiiden")
       : section[i].classList.remove("section-hiiden");
-
-    console.log(section[i]);
   }
 }
 
@@ -27,11 +36,16 @@ displaySection();
 sliderBtnNext.addEventListener("click", () => {
   counter++;
   displaySection();
+  console.log(counter);
+  checkSlider();
 });
 
 sliderBtnPrev.addEventListener("click", () => {
   counter--;
   displaySection();
+  console.log(counter);
+  checkSlider();
 });
 
-console.log(sliderBtnNext);
+console.log(counter);
+console.log(section.length);

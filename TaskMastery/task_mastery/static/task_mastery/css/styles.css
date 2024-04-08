@@ -102,6 +102,7 @@
     width: 160px;
     height: 50px;
     font-size: 20px;
+    margin-top: 30px;
 }
 
 .main-section {
@@ -143,8 +144,8 @@
 
 .btn-next-icon,
 .btn-prev-icon {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
 }
 
 .site-intended {
@@ -164,6 +165,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.site-intended-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.site-intended-item-text {
+  font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 85%;
+    color: #ffffff;
+    text-shadow: 2px 2px 10px #ffffff;
 }
 
 @media (min-width: 992px) {
