@@ -87,6 +87,7 @@
 }
 
 .introductory-section-title {
+    margin: 0;
     max-width: 670px;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
@@ -103,6 +104,67 @@
     font-size: 20px;
 }
 
+.main-section {
+  margin: 48px 0;
+}
+
+.site-intended {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.site-intended-title {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 85%;
+    color: #ffffff;
+    text-shadow: 2px 2px 10px #ffffff;
+}
+
+.point-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.site-intended-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  list-style: none;
+}
+
+.section-hiiden {
+  display: none;
+}
+
+.btn-next-icon,
+.btn-prev-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.site-intended {
+  position: relative;
+  z-index: 1;
+}
+
+.slider-btn-next,
+.slider-btn-prev {
+  position: relative;
+  z-index: 1;
+  background: none;
+  border: none;
+}
+
+.slider-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 @media (min-width: 992px) {
   .logIn:hover {
@@ -110,3 +172,20 @@
     box-shadow: 2px 2px 10px #f28743, 0 0 20px #bb31be, 0 0 50px #f28743, 0 0 100px #bb31be;
 
   }
+
+  .btn-next-icon:hover {
+    cursor: pointer;
+    transform: translateY(-0.25rem);
+    box-shadow: 2px 2px 10px #f28743, 0 0 20px #bb31be, 0 0 50px #f28743, 0 0 100px #bb31be;
+    border: 1px solid #f28743;
+    border-radius: 50%;
+  }
+
+  .btn-prev-icon:hover {
+    cursor: pointer;
+    transform: translateY(-0.25rem);
+    box-shadow: 2px 2px 10px #f28743, 0 0 20px #bb31be, 0 0 50px #f28743, 0 0 100px #bb31be;
+    border: 1px solid #bb31be;
+    border-radius: 50%;
+  }
+}

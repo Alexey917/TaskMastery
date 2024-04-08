@@ -12,10 +12,9 @@
 
   <body class="bg-body">
     <div class="container">
-      {% block headerMain %}{% endblock headerMain %}
-      {% block introductorySection %}{% endblock introductorySection %}
+        {% include "task_mastery/index.html" %}
     </div>
     
-    <!-- <script src="js/main.js" ></script> -->
+    <script src="{% static 'task_mastery/js/mainSlider.js' %}" ></script>
   </body>
 </html>

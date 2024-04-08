@@ -1,9 +1,4 @@
-{% extends "task_mastery/base.html" %}
-{% load static %}
-
-{% block title %}Главная{% endblock title %}
-
-{% block headerMain %}
+  {% load static %}
   <header class="header-task-mastery">
     <nav class="nav-task-mastery">
       <div class="logo">
@@ -16,16 +11,52 @@
       <button class="logIn">Войти</button>
     </nav>
   </header>
-{% endblock headerMain %}
 
+  <main class="main-task-mastery">
+    <section class="introductory-section main-section">
+      <p class="introductory-section-title">
+        TaskMastery - ваш надежный помощник в эффективном управлении задачами и проектами
+      </p>
+      <button class="introductory-section-btn logIn">Начать</button>
+    </section>
+  
+    <section class="site-intended main-section">
+      <img class="site-intended-img" src="{% static 'task_mastery/img/siteIntended.jpg' %}" alt="site-intended">
+      <div class="site-intended-text">
+        <h3 class="site-intended-title">Этот сайт предназначен для тех, кто стремится</h3>
+        <ul class="site-intended-list">
+          <li class="site-intended-item">
+            <svg class="point-icon">
+              <use href="{% static 'task_mastery/img/sprite.svg' %}#point"></use>
+            </svg>
+            <span>повысить свою продуктивность</span>
+          </li>
+          <li class="site-intended-item">
+            <svg class="point-icon">
+              <use href="{% static 'task_mastery/img/sprite.svg' %}#point"></use>
+            </svg>
+            <span>легко планировать и отслеживать свои дела</span>
+          </li>
+          <li class="site-intended-item">
+            <svg class="point-icon">
+              <use href="{% static 'task_mastery/img/sprite.svg' %}#point"></use>
+            </svg>
+            <span>а также эффективно координировать работу в команде.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-{% block introductorySection %}
-  <section class="introductory-section">
-    <p class="introductory-section-title">
-      TaskMastery - ваш надежный помощник в эффективном управлении задачами и проектами
-    </p>
-    <button class="introductory-section-btn logIn">Начать</button>
-  </section>
-{% endblock introductorySection %}
-
-<button class="introductory-section-scroll"></button>
+    <div class="slider-buttons">
+      <button class="slider-btn-next">
+        <svg class="btn-next-icon">
+          <use href="{% static 'task_mastery/img/sprite.svg' %}#btn-next"></use>
+        </svg>
+      </button>
+      <button class="slider-btn-prev">
+        <svg class="btn-prev-icon">
+          <use href="{% static 'task_mastery/img/sprite.svg' %}#btn-prev"></use>
+        </svg>
+      </button>
+    </div>
+  </main>
