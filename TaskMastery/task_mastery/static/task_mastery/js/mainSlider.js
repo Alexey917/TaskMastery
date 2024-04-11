@@ -34,6 +34,7 @@ function displaySection() {
 displaySection();
 
 sliderBtnNext.addEventListener("click", () => {
+  section[counter].classList.add("appearance");
   counter++;
   displaySection();
   console.log(counter);

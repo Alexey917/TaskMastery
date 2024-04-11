@@ -112,7 +112,17 @@
   height: 400px;
 }
 
-.site-intended {
+.appearence {
+  animation: 5s appearence easy;
+}
+
+@keyframes appearence {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.site-intended,
+.mobile-version {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -155,7 +165,8 @@
   height: 24px;
 }
 
-.site-intended {
+.site-intended,
+.mobile-version {
   position: relative;
   z-index: 1;
 }
@@ -244,7 +255,8 @@
   overflow: hidden;
 }
 
-.team-work {
+.team-work,
+.personalized {
   position: relative;
   display: flex;
   flex-direction: row-reverse;
@@ -257,6 +269,14 @@
   border-radius: 50%;
 }
 
+.personalized-img {
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+.mobile-version-img {
+  border-radius: 10px;
+}
 
 .section-hiiden {
   display: none;
