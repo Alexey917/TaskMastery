@@ -131,12 +131,14 @@
 .point-icon {
   width: 24px;
   height: 24px;
+  flex-shrink: 0;
 }
 
 .site-intended-text {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  max-width: 537px;
 }
 
 .site-intended-list {
@@ -240,6 +242,19 @@
   width: 250px;
   height: 250px;
   overflow: hidden;
+}
+
+.team-work {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 1;
+}
+
+.team-work-img {
+  border-radius: 50%;
 }
 
 

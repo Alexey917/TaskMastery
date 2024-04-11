@@ -25,24 +25,14 @@
       <div class="site-intended-text">
         <h3 class="site-intended-title">Этот сайт предназначен для тех, кто стремится</h3>
         <ul class="site-intended-list">
-          <li class="site-intended-item">
-            <svg class="point-icon">
-              <use href="{% static 'task_mastery/img/sprite.svg' %}#point"></use>
-            </svg>
-            <span class="site-intended-item-text">повысить свою продуктивность</span>
-          </li>
-          <li class="site-intended-item">
-            <svg class="point-icon">
-              <use href="{% static 'task_mastery/img/sprite.svg' %}#point"></use>
-            </svg>
-            <span class="site-intended-item-text">легко планировать и отслеживать свои дела</span>
-          </li>
-          <li class="site-intended-item">
-            <svg class="point-icon">
-              <use href="{% static 'task_mastery/img/sprite.svg' %}#point"></use>
-            </svg>
-            <span class="site-intended-item-text">а также эффективно координировать работу в команде.</span>
-          </li>
+          {% for elem in siteIntended %}
+            <li class="site-intended-item">
+              <svg class="point-icon">
+                <use href="{% static 'task_mastery/img/sprite.svg' %}#point"></use>
+              </svg>
+              <span class="site-intended-item-text">{{elem}}</span>
+            </li>
+          {% endfor %}
         </ul>
       </div>
     </section>
@@ -63,28 +53,35 @@
       <div class="task-management-text">
         <div class="site-intended-text">
           <h3 class="site-intended-title">Планирование проектов:</h3>
-        <ul class="site-intended-list">
-          <li class="site-intended-item">
-            <svg class="point-icon">
-              <use href="{% static 'task_mastery/img/sprite.svg' %}#point"></use>
-            </svg>
-            <span class="site-intended-item-text">систематизируйте свои проекты</span>
-          </li>
-          <li class="site-intended-item">
-            <svg class="point-icon">
-              <use href="{% static 'task_mastery/img/sprite.svg' %}#point"></use>
-            </svg>
-            <span class="site-intended-item-text">создавайте четкие планы действий</span>
-          </li>
-          <li class="site-intended-item">
-            <svg class="point-icon">
-              <use href="{% static 'task_mastery/img/sprite.svg' %}#point"></use>
-            </svg>
-            <span class="site-intended-item-text">отслеживайте прогресс в реальном времени</span>
-          </li>
-        </ul>
+          <ul class="site-intended-list">
+            {% for elem in planning %}
+              <li class="site-intended-item">
+                <svg class="point-icon">
+                  <use href="{% static 'task_mastery/img/sprite.svg' %}#point"></use>
+                </svg>
+                <span class="site-intended-item-text">{{elem}}</span>
+              </li>
+            {% endfor %}
+          </ul>
         </div>
         
+      </div>
+    </section>
+
+    <section class="team-work main-section">
+      <img class="site-intended-img team-work-img" src="{% static 'task_mastery/img/demo4.jpg' %}" alt="site-intended">
+      <div class="site-intended-text">
+        <h3 class="site-intended-title">Коллаборация в команде:</h3>
+        <ul class="site-intended-list">
+          {% for elem in teamWork %}
+            <li class="site-intended-item">
+              <svg class="point-icon">
+                <use href="{% static 'task_mastery/img/sprite.svg' %}#point"></use>
+              </svg>
+              <span class="site-intended-item-text">{{elem}}</span>
+            </li>
+          {% endfor %}
+        </ul>
       </div>
     </section>
 
