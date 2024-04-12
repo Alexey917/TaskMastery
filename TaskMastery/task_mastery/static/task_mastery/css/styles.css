@@ -224,8 +224,8 @@
 
 .task-management-img {
   position: absolute;
-  width: 250px;
-  height: 250px;
+  width: 220px;
+  height: 220px;
 }
 
 .task-management-imgs {
@@ -236,8 +236,8 @@
 
 .wrapper-tmi1 {
   position: absolute;
-  width: 250px;
-  height: 250px;
+  width: 220px;
+  height: 220px;
   overflow: hidden;
 }
 
@@ -245,8 +245,8 @@
   position: absolute;
   top: 75px;
   left: 100px;
-  width: 250px;
-  height: 250px;
+  width: 220px;
+  height: 220px;
   overflow: hidden;
 }
 
@@ -254,8 +254,8 @@
   position: absolute;
   left: 194px;
   top: 175px;
-  width: 250px;
-  height: 250px;
+  width: 220px;
+  height: 220px;
   overflow: hidden;
 }
 
@@ -285,14 +285,15 @@
 .appearence {
   visibility: visible;
   opacity: 1;
-  transition: opacity 2s linear;
+  transition: opacity 2s linear, transform 1s;
+  transform: translateY(0);
 }
 
 
 .disapearence {
   visibility: hidden; 
   opacity: 0;
-  transition: visibility 0s 2s, opacity 2s linear, transform 0.4s;
+  transition: visibility 0s 2s, opacity 2s linear, transform 1s;
   transform: translateY(-100%);
 }
 
