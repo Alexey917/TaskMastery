@@ -85,6 +85,13 @@
     transition: 1s;
 }
 
+.main-task-mastery {
+  position: relative;
+  overflow: hidden;
+  height: 400px;
+  z-index: 1;
+}
+
 .introductory-section {
     position: relative;
     display: flex;
@@ -113,6 +120,9 @@
 }
 
 .main-section {
+  position: absolute;
+  visibility: hidden;
+  width: 1440px;
   height: 400px;
 }
 
@@ -161,7 +171,7 @@
 
 .site-intended,
 .mobile-version {
-  position: relative;
+  /* position: relative; */
   z-index: 1;
 }
 
@@ -208,7 +218,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  position: relative;
+  /* position: relative; */
   z-index: 1;
 }
 
@@ -251,7 +261,7 @@
 
 .team-work,
 .personalized {
-  position: relative;
+  /* position: relative; */
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
@@ -278,17 +288,18 @@
   transition: opacity 2s linear;
 }
 
+
 .disapearence {
-  position: absolute;
-  visibility: hidden;
+  visibility: hidden; 
   opacity: 0;
-  transition: visibility 0s 2s, opacity 2s linear;
+  transition: visibility 0s 2s, opacity 2s linear, transform 0.4s;
+  transform: translateY(-100%);
 }
 
-.section-hiden {
+.section-hidden {
   display: none;
-  transition: 2s;
 }
+
 
 @media (min-width: 992px) {
   .logIn:hover {
