@@ -88,8 +88,9 @@
 .main-task-mastery {
   position: relative;
   overflow: hidden;
-  height: 400px;
+  height: 440px;
   z-index: 1;
+  border-radius: 20px;
 }
 
 .introductory-section {
@@ -97,6 +98,7 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    padding-left: 20px;
     z-index: 1;
 }
 
@@ -330,5 +332,23 @@
     cursor: pointer;
     z-index: 2;
     transition: 1s;
+  }
+
+  .team-work-img:hover {
+    transform: scale(0.8);
+    cursor: pointer;
+    transition: 1s;
+  }
+
+  .personalized-img:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 10px #f28743, 0 0 20px #bb31be, 0 0 50px #f28743, 0 0 100px #bb31be;
+    transition: 1s;
+  }
+
+  .sii:hover,
+  .mobile-version-img:hover {
+    cursor: pointer;
+    transform: translateY(-0.45rem);
   }
 }
