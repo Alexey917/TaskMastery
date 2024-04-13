@@ -1,7 +1,10 @@
 from django.contrib import admin
 from . import views
 from django.urls import path, include
+from .views import *
 
 urlpatterns = [
-    path('', views.index)
+    path('', Index.as_view(), name="main"),
+    # path('', RegisterUser.as_view()),
+    path('account/', account, name="account")
 ]

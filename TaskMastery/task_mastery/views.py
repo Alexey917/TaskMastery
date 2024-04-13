@@ -1,27 +1,22 @@
 from django.shortcuts import render
+from django.views.generic import CreateView
+
+from django.urls import reverse_lazy
+from .utils import DataMixin
+from .forms import RegisterUserForm
 
 
-# Create your views here.
-def index(request):
-    planning = [
-        'систематизируйте свои проекты', 
-        'создавайте четкие планы действий', 
-        'отслеживайте прогресс в реальном времени'
-        ]
+class Index(DataMixin, CreateView):
+    form_class = RegisterUserForm 
+    template_name = 'task_mastery/base.html' 
+    success_url = reverse_lazy('account') 
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(title="TaskMastery")
+        return dict(list(context.items()) + list(c_def.items()))
     
-    siteIntended = [
-        'повысить свою продуктивность',
-        'легко планировать и отслеживать свои дела',
-        'а также эффективно координировать работу в команде'
-    ]
 
-    teamWork = [
-        'работайте с коллегами над общими проектами',
-        'делегируйте задачи',
-        'обменивайтесь комментариями и файлами для более эффективного сотрудничества'
-    ]
-
-    return render(request, 'task_mastery/base.html', context={"planning": planning, 
-                                                              "siteIntended": siteIntended,
-                                                              "teamWork": teamWork})
+def account(request):
+    return render(request, 'task_mastery/account.html')
 

@@ -129,27 +129,19 @@
           </svg>
         </button>
         <h3 class="modal-title-registration">Регистрация</h3>
-        <form action="#" method="POST" class="form-registration">
-          <div class="registration-form-group">
-            <input id="registration-name" type="text">
-            <label for="registration-name">Логин</label>
-          </div>
-          <div class="registration-form-group">
-            <input id="registration-name" type="text">
-            <label for="registration-name">Почта</label>
-          </div>
-          <div class="registration-form-group">
-            <input id="registration-name" type="text">
-            <label for="registration-name">Пароль</label>
-          </div>
-          <div class="registration-form-group">
-            <input id="registration-name" type="text">
-            <label for="registration-name">Повторить пароль</label>
-          </div>
+        <form  method="POST" class="form-registration">
+          {% csrf_token %}
+        
+          {% for item in form %}
+            <div class="registration-form-group">
+              <label class="registration-label" for="{{ item.id_for_label }}">{{item.label}}</label>
+              {{ item }}
+            </div>
+          {% endfor %}
 
-          <button class="registration-btn">Зарегистрироваться</button>
+          <button class="registration-btn" type="submit">Зарегистрироваться</button>
 
-          <div class="registration-notify">
+          <!-- <div class="registration-notify">
             <label for="" class="registration-notify-label">
               <input type="checkbox" id="checkbox-registration" name="checkbox">
               <span class="checkmark-registration"></span>
@@ -158,7 +150,7 @@
               Нажимая на кнопку, вы соглашаетесь на обработку персональных
               данных и <a href="" class="registration-notify-link">политикой конфиденциальности</a>      
             </p>
-          </div>
+          </div> -->
         </form>
       </div>
     </div>
@@ -174,7 +166,8 @@
         </button>
         <h3 class="modal-title-authorization">Авторизация</h3>
         <form action="#" method="POST" class="form-authorization">
-          <div class="authorization-form-group">
+          {% csrf_token %}
+          <!-- <div class="authorization-form-group">
             <input id="authorization-name" type="text">
             <label for="authorization-name">Логин</label>
           </div>
@@ -182,9 +175,11 @@
           <div class="authorization-form-group">
             <input id="authorization-name" type="text">
             <label for="authorization-name">Пароль</label>
-          </div>
+          </div> -->
 
-          <button class="authorization-btn">Войти</button>
+          {{ form.as_div }}
+
+          <button class="authorization-btn" type="submit">Войти</button>
 
         </form>
       </div>
