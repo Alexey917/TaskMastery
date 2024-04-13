@@ -8,7 +8,7 @@
         </svg>
       </div>
 
-      <button class="logIn">Войти</button>
+      <button class="logIn authorization">Войти</button>
     </nav>
   </header>
 
@@ -123,12 +123,59 @@
   <div class="modal-registration">
     <div class="modal-dialog-registration">
       <div class="modal-content-registration">
-        <h3 class="modal-title-registration"></h3>
+        <h3 class="modal-title-registration">Регистрация</h3>
         <form action="#" method="POST" class="form-registration">
-          <div class="registration-form-group"></div>
-          <div class="registration-form-group"></div>
-          <div class="registration-form-group"></div>
-          <div class="registration-form-group"></div>
+          <div class="registration-form-group">
+            <input id="registration-name" type="text">
+            <label for="registration-name">Логин</label>
+          </div>
+          <div class="registration-form-group">
+            <input id="registration-name" type="text">
+            <label for="registration-name">Почта</label>
+          </div>
+          <div class="registration-form-group">
+            <input id="registration-name" type="text">
+            <label for="registration-name">Пароль</label>
+          </div>
+          <div class="registration-form-group">
+            <input id="registration-name" type="text">
+            <label for="registration-name">Повторить пароль</label>
+          </div>
+
+          <button class="registration-btn">Зарегистрироваться</button>
+
+          <div class="registration-notify">
+            <label for="" class="registration-notify-label">
+              <input type="checkbox" id="checkbox-registration" name="checkbox">
+              <span class="checkmark-registration"></span>
+            </label>
+            <p class="registration-notify-text">
+              Нажимая на кнопку, вы соглашаетесь на обработку персональных
+              данных и <a href="" class="registration-notify-link">политикой конфиденциальности</a>      
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-authorization">
+    <div class="modal-dialog-authorization">
+      <div class="modal-content-authorization">
+        <h3 class="modal-title-authorization">Авторизация</h3>
+        <form action="#" method="POST" class="form-authorization">
+          <div class="authorization-form-group">
+            <input id="authorization-name" type="text">
+            <label for="authorization-name">Логин</label>
+          </div>
+
+          <div class="authorization-form-group">
+            <input id="authorization-name" type="text">
+            <label for="authorization-name">Пароль</label>
+          </div>
+
+          <button class="authorization-btn">Войти</button>
+
         </form>
       </div>
     </div>
