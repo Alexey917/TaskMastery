@@ -132,10 +132,12 @@
         <form  method="POST" class="form-registration">
           {% csrf_token %}
         
-          {% for item in form %}
+          <div class="form-error">{{ form.non_field_errors }}</div>
+          {% for item in formReg %}
             <div class="registration-form-group">
               <label class="registration-label" for="{{ item.id_for_label }}">{{item.label}}</label>
               {{ item }}
+              <div class="form-error">{{ f.errors }}</div>
             </div>
           {% endfor %}
 
@@ -165,19 +167,15 @@
           </svg>
         </button>
         <h3 class="modal-title-authorization">Авторизация</h3>
-        <form action="#" method="POST" class="form-authorization">
+        <form method="POST" class="form-authorization">
           {% csrf_token %}
-          <!-- <div class="authorization-form-group">
-            <input id="authorization-name" type="text">
-            <label for="authorization-name">Логин</label>
-          </div>
 
+          {% for item in formAuth %}
           <div class="authorization-form-group">
-            <input id="authorization-name" type="text">
-            <label for="authorization-name">Пароль</label>
-          </div> -->
-
-          {{ form.as_div }}
+            <label class="authorization-label" for="{{ item.id_for_label }}">{{item.label}}</label>
+            {{ item }}
+          </div>
+          {% endfor %}
 
           <button class="authorization-btn" type="submit">Войти</button>
 

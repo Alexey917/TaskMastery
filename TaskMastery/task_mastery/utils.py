@@ -1,3 +1,5 @@
+from .forms import RegisterUserForm, LoginUserForm
+
 planning = [
   'систематизируйте свои проекты', 
   'создавайте четкие планы действий', 
@@ -22,4 +24,6 @@ class DataMixin:
     context['planning'] = planning
     context['siteIntended'] = siteIntended
     context['teamWork'] = teamWork
+    # context['formReg'] = RegisterUserForm
+    # context['formAuth'] = LoginUserForm
     return context
