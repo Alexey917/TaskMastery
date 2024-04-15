@@ -115,11 +115,16 @@
 }
 
 .introductory-section-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 160px;
     height: 50px;
     font-size: 20px;
     margin-top: 30px;
+    text-decoration: none;
 }
+
 
 .main-section {
   position: absolute;
@@ -303,7 +308,14 @@
   display: none;
 }
 
-.modal-registration, 
+.registration {
+  width: 482px;
+  margin: auto;
+  padding: 2.5rem;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #f28743, #bb31be);
+}
+ 
 .modal-authorization {
   position: fixed;
   top: 0;
@@ -316,7 +328,6 @@
   background: radial-gradient(rgba(0, 0, 0, 0.66), rgba(0, 0, 0));
 }
 
-.modal-dialog-registration,
 .modal-dialog-authorization {
   position: relative;
   width: 482px;
@@ -332,6 +343,10 @@
   visibility: visible;
   opacity: 1;
   z-index: 5;
+}
+
+.form-error {
+  color: yellow;
 }
 
 

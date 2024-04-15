@@ -12,7 +12,8 @@
 
   <body class="bg-body">
     <div class="container">
-        {% include "task_mastery/index.html" %}
+      {% block index %}{% endblock index %}
+      {% block reg %}{% endblock reg %}
     </div>
     
     <script src="{% static 'task_mastery/js/mainSlider.js' %}" ></script>

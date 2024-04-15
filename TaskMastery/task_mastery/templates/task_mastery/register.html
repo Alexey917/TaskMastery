@@ -1,0 +1,35 @@
+{% extends "task_mastery/base.html" %}
+{% load static %}
+
+{% block reg %}
+<section class="registration">
+  <div class="modal-content-registration">
+    <h3 class="title-registration">Регистрация</h3>
+    <form  method="POST" class="form-registration">
+      {% csrf_token %}
+      
+      <div class="form-error">{{ form.non_field_errors }}</div>
+      {% for item in form %}
+        <div class="registration-form-group">
+          <label class="registration-label" for="{{ item.id_for_label }}">{{item.label}}</label>
+          {{ item }}
+          <div class="form-error">{{ item.errors }}</div>
+        </div>
+      {% endfor %}
+
+      <button class="registration-btn" type="submit">Зарегистрироваться</button>
+
+        <!-- <div class="registration-notify">
+          <label for="" class="registration-notify-label">
+            <input type="checkbox" id="checkbox-registration" name="checkbox">
+            <span class="checkmark-registration"></span>
+          </label>
+          <p class="registration-notify-text">
+            Нажимая на кнопку, вы соглашаетесь на обработку персональных
+            данных и <a href="" class="registration-notify-link">политикой конфиденциальности</a>      
+          </p>
+        </div> -->
+    </form>
+  </div>
+</section>
+{% endblock reg %}

@@ -1,8 +1,11 @@
-  {% load static %}
+{% extends "task_mastery/base.html" %}
+{% load static %}
+
+  {% block index %}
   <header class="header-task-mastery">
     <nav class="nav-task-mastery">
       <div class="logo">
-        <a href="#" class="header-logo">TaskMastery</a>
+        <a href="{% url 'main' %}" class="header-logo">TaskMastery</a>
         <svg class="logo-icon">
           <use href="{% static 'task_mastery/img/sprite.svg' %}#logo"></use>
         </svg>
@@ -17,7 +20,7 @@
       <p class="introductory-section-title">
         TaskMastery - ваш надежный помощник в эффективном управлении задачами и проектами
       </p>
-      <button class="introductory-section-btn logIn">Начать</button>
+      <a href="{% url 'registration' %}" class="introductory-section-btn logIn"><span class="introductory-section-span">Начать</span></a>
     </section>
   
     <section class="site-intended main-section">
@@ -120,44 +123,6 @@
     </button>
   </div>
 
-  <div class="modal-registration">
-    <div class="modal-dialog-registration">
-      <div class="modal-content-registration">
-        <button class="btn-close-registration">
-          <svg class="close-modal-icon">
-            <use href="{% static 'task_mastery/img/sprite.svg' %}#close-modal"></use>
-          </svg>
-        </button>
-        <h3 class="modal-title-registration">Регистрация</h3>
-        <form  method="POST" class="form-registration">
-          {% csrf_token %}
-        
-          <div class="form-error">{{ form.non_field_errors }}</div>
-          {% for item in formReg %}
-            <div class="registration-form-group">
-              <label class="registration-label" for="{{ item.id_for_label }}">{{item.label}}</label>
-              {{ item }}
-              <div class="form-error">{{ f.errors }}</div>
-            </div>
-          {% endfor %}
-
-          <button class="registration-btn" type="submit">Зарегистрироваться</button>
-
-          <!-- <div class="registration-notify">
-            <label for="" class="registration-notify-label">
-              <input type="checkbox" id="checkbox-registration" name="checkbox">
-              <span class="checkmark-registration"></span>
-            </label>
-            <p class="registration-notify-text">
-              Нажимая на кнопку, вы соглашаетесь на обработку персональных
-              данных и <a href="" class="registration-notify-link">политикой конфиденциальности</a>      
-            </p>
-          </div> -->
-        </form>
-      </div>
-    </div>
-  </div>
-
   <div class="modal-authorization">
     <div class="modal-dialog-authorization">
       <div class="modal-content-authorization">
@@ -170,10 +135,12 @@
         <form method="POST" class="form-authorization">
           {% csrf_token %}
 
-          {% for item in formAuth %}
+          <input type="hidden" name="next" value="{{ next }}" />
+          {% for item in form %}
           <div class="authorization-form-group">
             <label class="authorization-label" for="{{ item.id_for_label }}">{{item.label}}</label>
             {{ item }}
+            <div class="form-error">{{ item.errors }}</div>
           </div>
           {% endfor %}
 
@@ -183,3 +150,4 @@
       </div>
     </div>
   </div>
+  {% endblock index %}
