@@ -5,7 +5,7 @@
   <header class="header-task-mastery">
     <nav class="nav-task-mastery">
       <div class="logo">
-        <a href="{% url 'main' %}" class="header-logo">TaskMastery</a>
+        <a href="{% url 'task_mastery:main' %}" class="header-logo">TaskMastery</a>
         <svg class="logo-icon">
           <use href="{% static 'task_mastery/img/sprite.svg' %}#logo"></use>
         </svg>
@@ -20,7 +20,7 @@
       <p class="introductory-section-title">
         TaskMastery - ваш надежный помощник в эффективном управлении задачами и проектами
       </p>
-      <a href="{% url 'registration' %}" class="introductory-section-btn logIn"><span class="introductory-section-span">Начать</span></a>
+      <a href="{% url 'task_mastery:registration' %}" class="introductory-section-btn logIn"><span class="introductory-section-span">Начать</span></a>
     </section>
   
     <section class="site-intended main-section">
@@ -132,6 +132,13 @@
           </svg>
         </button>
         <h3 class="modal-title-authorization">Авторизация</h3>
+        {% if messages %}
+				      {% for message in messages %}
+					      <div class="alert-error-form alert-{{message.tags}}">
+					        {{message}}
+					      </div>
+					   {% endfor %}
+				{% endif %}
         <form method="POST" class="form-authorization">
           {% csrf_token %}
 
@@ -141,14 +148,15 @@
             <label class="authorization-label" for="{{ item.id_for_label }}">{{item.label}}</label>
             {{ item }}
             <div class="form-error">{{ item.errors }}</div>
+            
           </div>
           {% endfor %}
 
           <button class="authorization-btn" type="submit">Войти</button>
           <div class="links-auth">
-            <a href="{% url 'registration' %}" class="reg-come-back">Зарегистрироваться </a>
+            <a href="{% url 'task_mastery:registration' %}" class="reg-come-back">Зарегистрироваться </a>
             <span class="reg-come-back">|</span>
-            <a href="{% url 'main' %}" class="reg-come-back">Плохо с памятью?</a>
+            <a href="{% url 'task_mastery:password_reset' %}" class="reg-come-back">Плохо с памятью?</a>
           </div>
 
         </form>

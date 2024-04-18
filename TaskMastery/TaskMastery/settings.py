@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'task_mastery.apps.TaskMasteryConfig'
+    'task_mastery.apps.TaskMasteryConfig',
+    'captcha'
 ]
 
 MIDDLEWARE = [
@@ -128,3 +129,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'account'
 LOGOUT_REDIRECT_URL = 'main'
+
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"

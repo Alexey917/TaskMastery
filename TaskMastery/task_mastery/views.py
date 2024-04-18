@@ -5,8 +5,9 @@ from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse_lazy, reverse
 from .utils import DataMixin
 from .forms import RegisterUserForm, LoginUserForm
-from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.views import LoginView, LogoutView, PasswordResetView, PasswordResetDoneView, PasswordResetCompleteView, PasswordResetConfirmView
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 
 def register(request):
@@ -22,18 +23,18 @@ def register(request):
     return render(request, 'task_mastery/register.html', {'form': form})
 
 
-def index(request):
-    if request.method == 'POST':
-        form = LoginUserForm(request.POST)
-        if form.is_valid():
-            cd = form.cleaned_data
-            user = authenticate(request, username=cd['username'], password=cd['password'])
-            if user and user.is_active:
-                login(request, user)
-                return redirect('account')
-    else:
-        form = LoginUserForm()
-    return render(request, 'task_mastery/index.html', {'form': form})
+# def index(request):
+#     if request.method == 'POST':
+#         form = LoginUserForm(request.POST)
+#         if form.is_valid():
+#             cd = form.cleaned_data
+#             user = authenticate(request, username=cd['username'], password=cd['password'])
+#             if user and user.is_active:
+#                 login(request, user)
+#                 return redirect('account')
+#     else:
+#         form = LoginUserForm()
+#     return render(request, 'task_mastery/index.html', {'form': form})
 
 
 # class RegisterUser(DataMixin, CreateView):
@@ -57,15 +58,19 @@ def account(request):
     return render(request, 'task_mastery/account.html')
 
 
-# class LoginUser(DataMixin, LoginView):
-#     form_class = LoginUserForm
-#     template_name = 'task_mastery/index.html' 
+class LoginUser(DataMixin, LoginView):
+    form_class = LoginUserForm
+    template_name = 'task_mastery/index.html' 
  
-#     def get_context_data(self, *, object_list=None, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         c_def = self.get_user_context(title="TaskMastery")
-#         return dict(list(context.items()) + list(c_def.items()))
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(title="TaskMastery")
+        return dict(list(context.items()) + list(c_def.items()))
     
-#     def get_success_url(self):
-#         return reverse_lazy('account')
+    def get_success_url(self):
+        return reverse_lazy('task_mastery:account')
+    
+    def form_invalid(self, form):
+        messages.error(self.request,'Неверный логин или пароль')
+        return self.render_to_response(self.get_context_data(form=form))
     

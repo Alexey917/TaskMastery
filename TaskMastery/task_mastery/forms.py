@@ -4,6 +4,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.core.validators import  MinLengthValidator
 from django.contrib.auth.password_validation import NumericPasswordValidator, CommonPasswordValidator
+from captcha.fields import CaptchaField
 
 class RegisterUserForm(UserCreationForm):
     username = forms.CharField(label='Логин', widget=forms.TextInput(attrs={'class': 'registration-input'}))
@@ -11,6 +12,7 @@ class RegisterUserForm(UserCreationForm):
     password1 = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'registration-input'}),
                                 validators=[MinLengthValidator(8, message='Пароль слишком короткий(не менее 8 символов)')])
     password2 = forms.CharField(label='Повтор пароля', widget=forms.PasswordInput(attrs={'class': 'registration-input', 'name': 'password2'}), validators=[MinLengthValidator(8, 'Пароль слишком короткий(не менее 8 символов)')])
+    captcha = CaptchaField(label='Капча')
 
     def clean_username(self):
         username = self.cleaned_data['username']
@@ -37,10 +39,18 @@ class RegisterUserForm(UserCreationForm):
         fields = ('username', 'email' ,'password1', 'password2')
 
 
+
+
+
 class LoginUserForm(AuthenticationForm):
     username = forms.CharField(label='Логин', widget=forms.TextInput(attrs={'class': 'authorization-input'}))
     password = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'authorization-input'}))
+    captcha = CaptchaField(label='Капча')
 
     class Meta:
         model = User
         fields = ['username', 'password']
+
+    
+
+
