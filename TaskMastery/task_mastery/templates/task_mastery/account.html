@@ -10,7 +10,33 @@
     <title>{{ title }}</title>
   </head>
 
-  <body>
+  <body class="account-bg">
+    <header class="header-acc">
+      <svg class="menu-icon">
+        <use href="{% static 'task_mastery/img/sprite.svg' %}#menu"></use>
+      </svg>
+      <div class="logo">
+        <a href="{% url 'task_mastery:main' %}" class="header-logo acc-logo">TaskMastery</a>
+        <svg class="logo-icon">
+          <use href="{% static 'task_mastery/img/sprite.svg' %}#logo-acc"></use>
+        </svg>
+      </div>
+      <div class="search">
+        <svg class="search-icon">
+          <use href="{% static 'task_mastery/img/sprite.svg' %}#search"></use>
+        </svg>
+        <input type="search" placeholder="Поиск">
+      </div>
+      
+      <div class="user">
+        <div class="user-avatar"></div>
+        <svg class="dropdown-icon">
+          <use href="{% static 'task_mastery/img/sprite.svg' %}#dropdown"></use>
+        </svg>
+      </div>
+    </header>
+
+
     <section class="layer">
       <div class="layer__container">
         <div class="layers__item layer-1 bg-layer-1"></div>
@@ -28,7 +54,6 @@
       </div>
     </section>
 
-    <div style="height: 100vh;"></div>
     <script src="{% static 'task_mastery/libs/rain.js' %}" ></script>
     <script src="{% static 'task_mastery/js/account.js' %}" ></script>
   </body>

@@ -6,6 +6,7 @@
 
 :root {
   --index: calc(1vw + 1 vh);
+  --transition: 1s cubic-bezier(.05, .5, 0, 1)
 }
 
 @font-face {
@@ -374,7 +375,7 @@
 }
 
 .layer {
-  perspective: 1000px;
+  perspective: 739px;
   overflow: hidden;
 }
 
@@ -382,6 +383,8 @@
   height: 100vh;
   transform-style: preserve-3d;
   transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+  will-change: transform;
+  transition: transform var(--transition);
 }
 
 .layers__item {
@@ -421,17 +424,82 @@
 
 .layer-4 {
   transform: translateZ(190px) scale(0.9);
+  pointer-events: none;
 }
 
 .layer-5 {
   transform: translateZ(300px) scale(0.9);
+  pointer-events: none;
 }
 
 .layer-6 {
   transform: translateZ(380px);
+  pointer-events: none;
 }
 
+.account-bg {
+  background: #000000;
+}
 
+.acc-logo {
+  font-size: 24px;
+  background: linear-gradient(320deg, #42C285, #093F68);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header-acc {
+  position: absolute;
+  height: 70px;
+  inset: 0vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 2;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
+}
+
+.menu-icon {
+  width: 48px;
+  height: 48px;
+}
+
+.search-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.dropdown-icon {
+  width: 16px;
+  height: 10px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.3));
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  border-left: 1px solid rgba(255, 255, 255, 0.6);
+}
 
 @media (min-width: 992px) {
   .logIn:hover {
