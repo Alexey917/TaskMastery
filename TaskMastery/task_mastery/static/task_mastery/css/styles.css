@@ -443,7 +443,7 @@
 
 .acc-logo {
   font-size: 24px;
-  background: linear-gradient(320deg, #42C285, #093F68);
+  background: #ffffff;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -459,13 +459,9 @@
   z-index: 2;
 
   background: rgba(255, 255, 255, 0.1);
-
-  border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
   box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease-in-out;
 }
@@ -499,6 +495,42 @@
   border-radius: 50%;
   border-top: 1px solid rgba(255, 255, 255, 0.6);
   border-left: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.navbar {
+  position: absolute;
+  visibility: hidden;
+  top: 4.5vw;
+  width: 0;
+  bottom: 0vw;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  z-index: 2;
+
+  background: rgba(255, 255, 255, 0.1);
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
+  transition: all 0.7s ease-in-out;
+}
+
+.btn-menu {
+  cursor: pointer;
+  transition: 0.5s
+}
+
+.navbar-open {
+  visibility: visible;
+  width: 230px;
+  transition: all 0.7s ease-in-out;
+}
+
+.nav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 @media (min-width: 992px) {
@@ -551,5 +583,9 @@
 
   .reg-come-back:hover {
     text-shadow: 2px 2px 10px #ffffff;
+  }
+
+  .btn-menu:hover {
+    transform: rotate(360deg);
   }
 }

@@ -6,3 +6,10 @@ document.addEventListener("mousemove", (e) => {
     `,
   });
 });
+
+const btnMenu = document.querySelector(".btn-menu");
+const navbar = document.querySelector(".navbar");
+
+btnMenu.addEventListener("click", () => {
+  navbar.classList.toggle("navbar-open");
+});

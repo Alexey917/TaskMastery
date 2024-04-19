@@ -12,9 +12,11 @@
 
   <body class="account-bg">
     <header class="header-acc">
-      <svg class="menu-icon">
-        <use href="{% static 'task_mastery/img/sprite.svg' %}#menu"></use>
-      </svg>
+      <buttnon class="btn-menu">
+        <svg class="menu-icon">
+          <use href="{% static 'task_mastery/img/sprite.svg' %}#menu"></use>
+        </svg>
+      </buttnon>
       <div class="logo">
         <a href="{% url 'task_mastery:main' %}" class="header-logo acc-logo">TaskMastery</a>
         <svg class="logo-icon">
@@ -35,6 +37,23 @@
         </svg>
       </div>
     </header>
+
+    <nav class="navbar">
+      <ul class="nav-list">
+        <li class="nav-list-item">
+          <a href="{% url 'task_mastery:main' %}" class="">Кабинет</a>
+        </li>
+        <li class="nav-list-item">
+          <a href="{% url 'task_mastery:main' %}" class="">Проекты</a>
+        </li>
+        <li class="nav-list-item">
+          <a href="{% url 'task_mastery:main' %}" class="">Таймер</a>
+        </li>
+        <li class="nav-list-item">
+          <a href="{% url 'task_mastery:main' %}" class="">Аналитика</a>
+        </li>
+      </ul>
+    </nav>
 
 
     <section class="layer">
