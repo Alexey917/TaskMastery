@@ -75,6 +75,7 @@
         <div class="layers__item layer-2 bg-layer-2"></div>
         <div class="layers__item layer-3">
           <div class="account-content">
+            {% block cabinet %}{% endblock cabinet %}
             <a href="{% url 'task_mastery:logout' %}">Выйти</a>
           </div>
         </div>

@@ -18,6 +18,7 @@ teamWork = [
   'обменивайтесь комментариями и файлами для более эффективного сотрудничества'
 ]
 
+
 class DataMixin:
   def get_user_context(self, **kwargs):
     context = kwargs

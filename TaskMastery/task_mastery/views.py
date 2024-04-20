@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import CreateView
+from django.views.generic import CreateView, DetailView
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse_lazy, reverse
@@ -8,6 +8,8 @@ from .forms import RegisterUserForm, LoginUserForm
 from django.contrib.auth.views import LoginView, LogoutView, PasswordResetView, PasswordResetDoneView, PasswordResetCompleteView, PasswordResetConfirmView
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+import datetime
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def register(request):
@@ -21,31 +23,6 @@ def register(request):
     else:
         form = RegisterUserForm()
     return render(request, 'task_mastery/register.html', {'form': form})
-
-
-# def index(request):
-#     if request.method == 'POST':
-#         form = LoginUserForm(request.POST)
-#         if form.is_valid():
-#             cd = form.cleaned_data
-#             user = authenticate(request, username=cd['username'], password=cd['password'])
-#             if user and user.is_active:
-#                 login(request, user)
-#                 return redirect('account')
-#     else:
-#         form = LoginUserForm()
-#     return render(request, 'task_mastery/index.html', {'form': form})
-
-
-# class RegisterUser(DataMixin, CreateView):
-#     form_class = RegisterUserForm
-#     template_name = 'task_mastery/register.html' 
-#     success_url = reverse_lazy('/') 
-
-#     def get_context_data(self, *, object_list=None, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         c_def = self.get_user_context(title="TaskMastery")
-#         return dict(list(context.items()) + list(c_def.items()))
     
     
 def logout_user(request):
@@ -55,7 +32,55 @@ def logout_user(request):
 
 @login_required    
 def account(request):
-    return render(request, 'task_mastery/account.html')
+
+    months = [
+        "Января",
+        "Февраля",
+        "Марта",
+        "Апреля",
+        "Мая",
+        "Июня",
+        "Июля",
+        "Августа",
+        "Сентября",
+        "Октября",
+        "Ноября",
+        "Декабря"
+    ]
+
+    days = [
+            "Понедельник",
+            "Вторник",
+            "Среда",
+            "Четверг",
+            "Пятница",
+            "Суббота",
+            "Воскресенье",
+        ]
+
+    current_date = datetime.date.today()
+    day_week = current_date.today().weekday()
+
+    for i in range(len(months)):
+        if i == current_date.month - 1:
+            date = months[i]
+
+    for i in range(len(days)):
+            if day_week == i:
+                day_week = days[i]
+
+
+    user = request.user
+
+    return render(request, 'task_mastery/cabinet.html', {"current_date": f"{day_week}, {current_date.day} {date}", "user": user})
+
+# class Account(LoginRequiredMixin, DataMixin, DetailView):
+#     template_name = 'task_mastery/cabinet.html'
+
+#     def get_context_data(self, *, object_list=None, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         c_def = self.get_user_context(title="TaskMastery")
+#         return dict(list(context.items()) + list(c_def.items()))
 
 
 class LoginUser(DataMixin, LoginView):
