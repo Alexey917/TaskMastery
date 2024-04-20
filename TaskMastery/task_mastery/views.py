@@ -60,6 +60,15 @@ def account(request):
 
     current_date = datetime.date.today()
     day_week = current_date.today().weekday()
+    current_time = datetime.datetime.now().strftime("%H")
+
+    if int(current_time) >= 0 and int(current_time) < 5:
+        greetings = 'Доброй ночи'
+    elif int(current_time) > 5 and int(current_time) < 12:
+        greetings = 'Доброе утро'
+    else:
+        greetings = 'Добрый вечер'
+
 
     for i in range(len(months)):
         if i == current_date.month - 1:
@@ -72,7 +81,7 @@ def account(request):
 
     user = request.user
 
-    return render(request, 'task_mastery/cabinet.html', {"current_date": f"{day_week}, {current_date.day} {date}", "user": user})
+    return render(request, 'task_mastery/cabinet.html', {"current_date": f"{day_week}, {current_date.day} {date}", "user": user, "greetings": greetings})
 
 # class Account(LoginRequiredMixin, DataMixin, DetailView):
 #     template_name = 'task_mastery/cabinet.html'

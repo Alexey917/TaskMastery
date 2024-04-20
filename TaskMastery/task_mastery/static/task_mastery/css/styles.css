@@ -534,9 +534,31 @@
   transform: rotate(360deg);
 }
 
-.navbar-open {
+.navbar-open,
+.dropdown-open {
   visibility: visible;
   left: 0;
+  transition: all 0.7s ease-in-out;
+}
+
+.dropdown {
+  position: absolute;
+  visibility: visible;
+  top: 3.5vw;
+  right: 6vw;
+  width: 130px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 2;
+
+  background: rgba(255, 255, 255, 0.1);
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(3px);
+  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
   transition: all 0.7s ease-in-out;
 }
 
@@ -590,7 +612,7 @@
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-style: italic;
-  font-size: 48px;
+  font-size: 36px;
   line-height: 150%;
   color: #ffffff;
 }
