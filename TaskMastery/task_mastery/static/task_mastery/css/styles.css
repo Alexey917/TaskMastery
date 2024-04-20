@@ -134,6 +134,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
     width: 160px;
     height: 50px;
     font-size: 20px;
@@ -442,6 +444,7 @@
 }
 
 .acc-logo {
+  font-family: "merriweather-3d", sans-serif;
   font-size: 24px;
   background: #ffffff;
   background-clip: text;
@@ -459,9 +462,9 @@
   z-index: 2;
 
   background: rgba(255, 255, 255, 0.1);
-  border-bottom-right-radius: 20px;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(3px);
   box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease-in-out;
 }
@@ -471,7 +474,11 @@
   height: 48px;
 }
 
-.search-icon {
+.search-icon,
+.house-icon,
+.projects-icon,
+.timer-icon,
+.analytics-icon {
   width: 24px;
   height: 24px;
 }
@@ -501,7 +508,8 @@
   position: absolute;
   visibility: hidden;
   top: 4.5vw;
-  width: 0;
+  left: -15vw;
+  width: 230px;
   bottom: 0vw;
   padding: 20px;
   display: flex;
@@ -512,6 +520,7 @@
   background: rgba(255, 255, 255, 0.1);
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(3px);
   box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
   transition: all 0.7s ease-in-out;
 }
@@ -521,16 +530,40 @@
   transition: 0.5s
 }
 
+.btn-menu-rotate {
+  transform: rotate(360deg);
+}
+
 .navbar-open {
   visibility: visible;
-  width: 230px;
+  left: 0;
   transition: all 0.7s ease-in-out;
 }
 
 .nav-list {
-  margin: 0;
   padding: 0;
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.nav-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+  gap: 15px;
+}
+
+.nav-item-link {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 20px;
+  line-height: 150%;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 @media (min-width: 992px) {
@@ -581,11 +614,13 @@
     transform: translateY(-0.45rem);
   }
 
-  .reg-come-back:hover {
+  .reg-come-back:hover,
+  .nav-item-link:hover  {
     text-shadow: 2px 2px 10px #ffffff;
   }
 
-  .btn-menu:hover {
-    transform: rotate(360deg);
+  .nav-item-link:hover + .icon-nav {
+    box-shadow: 2px 2px 10px #ffffff;
+    border-radius: 50%;
   }
 }

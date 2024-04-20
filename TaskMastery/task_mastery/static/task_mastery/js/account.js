@@ -12,4 +12,5 @@ const navbar = document.querySelector(".navbar");
 
 btnMenu.addEventListener("click", () => {
   navbar.classList.toggle("navbar-open");
+  btnMenu.classList.toggle("btn-menu-rotate");
 });

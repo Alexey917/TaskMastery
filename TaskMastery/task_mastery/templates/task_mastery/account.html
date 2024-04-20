@@ -41,16 +41,29 @@
     <nav class="navbar">
       <ul class="nav-list">
         <li class="nav-list-item">
-          <a href="{% url 'task_mastery:main' %}" class="">Кабинет</a>
+          <a href="{% url 'task_mastery:main' %}" class="nav-item-link">Кабинет</a>
+          <svg class="house-icon icon-nav">
+            <use href="{% static 'task_mastery/img/sprite.svg' %}#house"></use>
+          </svg>
+          
         </li>
         <li class="nav-list-item">
-          <a href="{% url 'task_mastery:main' %}" class="">Проекты</a>
+          <a href="{% url 'task_mastery:main' %}" class="nav-item-link">Проекты</a>
+          <svg class="projects-icon icon-nav">
+            <use href="{% static 'task_mastery/img/sprite.svg' %}#projects"></use>
+          </svg>
         </li>
         <li class="nav-list-item">
-          <a href="{% url 'task_mastery:main' %}" class="">Таймер</a>
+          <a href="{% url 'task_mastery:main' %}" class="nav-item-link">Таймер</a>
+          <svg class="timer-icon icon-nav">
+            <use href="{% static 'task_mastery/img/sprite.svg' %}#timer"></use>
+          </svg>
         </li>
         <li class="nav-list-item">
-          <a href="{% url 'task_mastery:main' %}" class="">Аналитика</a>
+          <a href="{% url 'task_mastery:main' %}" class="nav-item-link">Аналитика</a>
+          <svg class="analytics-icon icon-nav">
+            <use href="{% static 'task_mastery/img/sprite.svg' %}#analytics"></use>
+          </svg>
         </li>
       </ul>
     </nav>
