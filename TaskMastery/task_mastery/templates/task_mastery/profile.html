@@ -1,0 +1,34 @@
+{% extends "task_mastery/account.html" %}
+
+{% block profile %}
+<div class="card-profile">
+  <div class="card-profile-img">
+      <img src="https://dl.dropbox.com/s/u3j25jx9tkaruap/Webp.net-resizeimage.jpg?raw=1">
+  </div>
+  <div class="desc-profile">
+      <h6 class="primary-profile info-profile">{{ user }}</h6>
+      <h6 class="secondary-profile info-profile">{{ email }}</h6>
+      <h6 class="secondary-profile info-profile">Olivia Smith</h6>
+      <h6 class="secondary-profile info-profile">Full Stack Developer</h6>
+      <h6 class="secondary-profile info-profile">Full Stack Developer</h6>
+
+      <h6 class="secondary-profile info-profile">Full Stack Developer</h6>
+  </div>
+  
+  <div class="details-profile">
+      <div class="complete-tasks-profile">
+          <h6 class="secondary-profile info-profile"> 86% </h6>
+          <h6 class="secondary-profile info-profile"> Задач выполнено </h6>
+      </div>
+      <div class="complete-projects-profile">
+          <h6 class="secondary-profile info-profile"> 92% </h6>
+          <h6 class="secondary-profile info-profile"> Проектов завершено </h6>
+      </div>
+  </div>
+  <div class="edit-profile-link">
+    <a href="{% url 'task_mastery:profile' %}" class="btn-edit-profile">Редактировать</a>
+  </div>
+
+</div>
+
+{% endblock profile %}

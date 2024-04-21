@@ -83,14 +83,6 @@ def account(request):
 
     return render(request, 'task_mastery/cabinet.html', {"current_date": f"{day_week}, {current_date.day} {date}", "user": user, "greetings": greetings})
 
-# class Account(LoginRequiredMixin, DataMixin, DetailView):
-#     template_name = 'task_mastery/cabinet.html'
-
-#     def get_context_data(self, *, object_list=None, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         c_def = self.get_user_context(title="TaskMastery")
-#         return dict(list(context.items()) + list(c_def.items()))
-
 
 class LoginUser(DataMixin, LoginView):
     form_class = LoginUserForm
@@ -107,4 +99,10 @@ class LoginUser(DataMixin, LoginView):
     def form_invalid(self, form):
         messages.error(self.request,'Неверный логин или пароль')
         return self.render_to_response(self.get_context_data(form=form))
+    
+def profile(request):
+    user = request.user
+    email = request.user.email
+
+    return render(request, 'task_mastery/profile.html', {"user": user, "email": email})
     
