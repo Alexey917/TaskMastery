@@ -533,16 +533,15 @@
   transform: rotate(360deg);
 }
 
-.navbar-open,
-.dropdown-open {
-  visibility: visible;
-  left: 0;
-  transition: all 0.7s ease-in-out;
+.dropdown-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .dropdown {
   position: absolute;
-  visibility: visible;
+  visibility: hidden;
   top: 3.5vw;
   right: 6vw;
   width: 130px;
@@ -556,8 +555,17 @@
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(3px);
   box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
-  transition: all 0.7s ease-in-out;
 }
+
+.navbar-open {
+  visibility: visible;
+  left: 0;
+}
+
+.dropdown-open {
+  visibility: visible;
+}
+
 
 .nav-list {
   padding: 0;
@@ -783,5 +791,9 @@
   .edit-profile-link:hover {
     transform: translateY(5px);
     cursor: pointer;
+  }
+
+  .dropdown-btn:active {
+    transform: translateY(5px);
   }
 }
