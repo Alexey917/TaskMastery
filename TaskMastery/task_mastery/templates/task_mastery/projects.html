@@ -4,7 +4,8 @@
 {% block projects %}
   <h2 class="projects-title">Ваши проекты</h2>
   <div class="projects-wrapper">
-    <form class="create-project form-cp">
+    <form method="POST" class="create-project form-cp">
+      {% csrf_token %}
       {% for item in form %}
         <div class="create-project-form-group">
           <label class="create-project-label" for="{{ item.id_for_label }}">{{item.label}}</label>
