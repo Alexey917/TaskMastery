@@ -1,0 +1,28 @@
+{% extends "task_mastery/account.html" %}
+{% load static %}
+
+{% block projects %}
+  <h2 class="projects-title">Ваши проекты</h2>
+  <div class="projects-wrapper">
+    <form class="create-project form-cp">
+      {% for item in form %}
+        <div class="create-project-form-group">
+          <label class="create-project-label" for="{{ item.id_for_label }}">{{item.label}}</label>
+          {{ item }}
+          <div class="form-error">{{ item.errors }}</div>  
+        </div>
+      {% endfor %}
+      <div class="btn-create-project">
+        <button type="submit" class="btn-add-cp">Добавить</button>
+        <button class="btn-cancel-cp">Отмена</button>
+      </div>
+
+    </form>
+    <button class="create-project">
+      <span class="create-project-title">Создать проект</span>
+      <svg class="house-icon icon-nav">
+        <use href="{% static 'task_mastery/img/sprite.svg' %}#plus"></use>
+      </svg>
+    </button>
+  </div>
+{% endblock projects %}

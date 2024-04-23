@@ -50,7 +50,7 @@
           
         </li>
         <li class="nav-list-item">
-          <a href="{% url 'task_mastery:main' %}" class="nav-item-link">Проекты</a>
+          <a href="{% url 'task_mastery:projects' %}" class="nav-item-link">Проекты</a>
           <svg class="projects-icon icon-nav">
             <use href="{% static 'task_mastery/img/sprite.svg' %}#projects"></use>
           </svg>
@@ -84,6 +84,7 @@
           <div class="account-content">
             {% block cabinet %}{% endblock cabinet %}
             {% block profile %}{% endblock profile %}
+            {% block projects %}{% endblock projects %}
           </div>
         </div>
         <div class="layers__item layer-4">

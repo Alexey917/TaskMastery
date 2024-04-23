@@ -5,18 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf93cb6f-eba3-4644-8df0-54ba7d871edf" name="Changes" comment="add: introductory-section">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskMastery/TaskMastery/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/TaskMastery/TaskMastery/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TaskMastery/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/TaskMastery/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskMastery/task_mastery/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/TaskMastery/task_mastery/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskMastery/task_mastery/static/task_mastery/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/TaskMastery/task_mastery/static/task_mastery/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskMastery/task_mastery/templates/task_mastery/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/TaskMastery/task_mastery/templates/task_mastery/account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskMastery/task_mastery/templates/task_mastery/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/TaskMastery/task_mastery/templates/task_mastery/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskMastery/task_mastery/templates/task_mastery/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/TaskMastery/task_mastery/templates/task_mastery/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskMastery/task_mastery/templates/task_mastery/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/TaskMastery/task_mastery/templates/task_mastery/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskMastery/task_mastery/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/TaskMastery/task_mastery/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskMastery/task_mastery/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/TaskMastery/task_mastery/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,15 +24,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/pocht/Desktop/TaskMastery",
-    "settings.editor.selected.configurable": "terminal"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/pocht/Desktop/TaskMastery&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python.Unnamed">
     <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="TaskMastery" />

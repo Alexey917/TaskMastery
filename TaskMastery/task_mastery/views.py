@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse_lazy, reverse
 from .utils import DataMixin
-from .forms import RegisterUserForm, LoginUserForm
+from .forms import RegisterUserForm, LoginUserForm, ProjectForm
 from django.contrib.auth.views import LoginView, LogoutView, PasswordResetView, PasswordResetDoneView, PasswordResetCompleteView, PasswordResetConfirmView
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -105,4 +105,13 @@ def profile(request):
     email = request.user.email
 
     return render(request, 'task_mastery/profile.html', {"user": user, "email": email})
+
+def projects(request):
+    if request.method == "POST":
+        form = ProjectForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = ProjectForm()
+    return render(request, 'task_mastery/projects.html', {"form": form})
     

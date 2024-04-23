@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.core.validators import  MinLengthValidator
 from django.contrib.auth.password_validation import NumericPasswordValidator, CommonPasswordValidator
 from captcha.fields import CaptchaField
+from .models import Projects
 
 class RegisterUserForm(UserCreationForm):
     username = forms.CharField(label='Логин', widget=forms.TextInput(attrs={'class': 'registration-input'}))
@@ -51,6 +52,14 @@ class LoginUserForm(AuthenticationForm):
         model = User
         fields = ['username', 'password']
 
+class ProjectForm(forms.ModelForm):
+    class Meta:
+        model = Projects
+        fields = ['name']
+        labels = {"name": "Название проекта: "}
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'input-ctp'}),
+        }
     
 
 

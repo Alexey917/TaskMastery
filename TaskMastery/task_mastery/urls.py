@@ -11,6 +11,7 @@ urlpatterns = [
     # path('', RegisterUser.as_view()),
     path('account', account, name="account"),
     path('account/profile', profile, name="profile"),
+    path('account/projects', projects, name="projects"),
     path('logout', logout_user, name="logout"),
     path('password-reset/',
          PasswordResetView.as_view(

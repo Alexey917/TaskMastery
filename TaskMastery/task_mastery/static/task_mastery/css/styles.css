@@ -729,6 +729,107 @@
   transition: all 0.2s ease;
 }
 
+.projects-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+}
+
+.form-cp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-project {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 300px;
+  height: 150px;
+  border-radius: 8px;
+  backdrop-filter: blur(3px);
+  box-shadow: 0px -3px 22px 0px hsl(156, 51%, 14%) inset;
+  background: none;
+  border: 2px dashed hsl(156, 51%, 14%); 
+  cursor: pointer;
+}
+
+.create-project-title {
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0.7px;
+  margin: 5px 0;
+}
+
+.projects-title {
+  margin-bottom: 50px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 24px;
+  line-height: 85%;
+  color: #ffffff;
+}
+
+.create-project-label {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.7px;
+  margin: 5px 0;
+}
+
+.btn-create-project {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.btn-add-cp, 
+.btn-cancel-cp {
+  padding: 10px;
+  background-color: hsla(156, 51%, 14%, 5%);
+  box-shadow: 0px -3px 60px 0px  hsl(156, 51%, 14%) inset;
+  color: #ffffff;
+  border-radius: 10px;
+  border: 1px solid hsl(156, 51%, 14%);
+  cursor: pointer;
+}
+
+.create-project-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-ctp {
+  background: transparent;
+  width: 250px;
+  padding: 10px;
+
+  border: 1px solid hsl(156, 51%, 14%);
+  border-radius: 5000px;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  box-shadow: 0px -3px 22px 0px hsl(156, 51%, 14%) inset;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  transition: all 0.2s ease-in-out;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
 
 @media (min-width: 992px) {
   .logIn:hover {
