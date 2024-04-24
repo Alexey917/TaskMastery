@@ -545,6 +545,7 @@
   top: 3.5vw;
   right: 6vw;
   width: 130px;
+  margin: 0;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -906,5 +907,41 @@
 
   .dropdown-btn:active {
     transform: translateY(5px);
+  }
+}
+
+
+@media (max-width: 1920px) {
+  .navbar,
+  .dropdown {
+    top: 3.5vw;
+  }
+}
+
+@media (max-width: 1740px) {
+  .navbar,
+  .dropdown {
+    top: 3.8vw;
+  }
+}
+
+@media (max-width: 1600px) {
+  .navbar,
+  .dropdown {
+    top: 4.2vw;
+  }
+}
+
+@media (max-width: 1440px) {
+  .navbar,
+  .dropdown {
+    top: 4.7vw;
+  }
+}
+
+@media (max-width: 1280px) {
+  .navbar,
+  .dropdown {
+    top: 5.3vw;
   }
 }
