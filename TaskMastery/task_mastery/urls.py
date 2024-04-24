@@ -12,6 +12,7 @@ urlpatterns = [
     path('account', account, name="account"),
     path('account/profile', profile, name="profile"),
     path('account/projects', projects, name="projects"),
+    path('account/timer', timer, name="timer"),
     path('logout', logout_user, name="logout"),
     path('password-reset/',
          PasswordResetView.as_view(

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'task_mastery/css/normalize.css' %}">
     <link rel="stylesheet" href="{% static 'task_mastery/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'task_mastery/css/pomodoro-clock.css' %}">
     <title>{{ title }}</title>
   </head>
 
@@ -56,7 +57,7 @@
           </svg>
         </li>
         <li class="nav-list-item">
-          <a href="{% url 'task_mastery:main' %}" class="nav-item-link">Таймер</a>
+          <a href="{% url 'task_mastery:timer' %}" class="nav-item-link">Таймер</a>
           <svg class="timer-icon icon-nav">
             <use href="{% static 'task_mastery/img/sprite.svg' %}#timer"></use>
           </svg>
@@ -85,6 +86,7 @@
             {% block cabinet %}{% endblock cabinet %}
             {% block profile %}{% endblock profile %}
             {% block projects %}{% endblock projects %}
+            {% block timer %}{% endblock timer %}
           </div>
         </div>
         <div class="layers__item layer-4">
@@ -95,8 +97,12 @@
       </div>
     </section>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="{% static 'task_mastery/libs/rain.js' %}" ></script>
     <script src="{% static 'task_mastery/js/account.js' %}" ></script>
+    <script src="{% static 'task_mastery/js/flip-clock.js' %}"></script>
+    <script src="{% static 'task_mastery/js/timer.js' %}" ></script>
+    <script>console.log($)</script>
   </body>
 </html>
 

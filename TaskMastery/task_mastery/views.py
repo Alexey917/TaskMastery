@@ -8,7 +8,7 @@ from .forms import RegisterUserForm, LoginUserForm, ProjectForm
 from django.contrib.auth.views import LoginView, LogoutView, PasswordResetView, PasswordResetDoneView, PasswordResetCompleteView, PasswordResetConfirmView
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-import datetime
+import datetime, time
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Projects
 
@@ -115,4 +115,8 @@ def projects(request):
     else:
         form = ProjectForm()
     return render(request, 'task_mastery/projects.html', {"form": form})
+
+
+def timer(request):
+    return render(request, 'task_mastery/timer.html')
     

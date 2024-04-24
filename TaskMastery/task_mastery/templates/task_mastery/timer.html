@@ -1,0 +1,30 @@
+{% extends 'task_mastery/account.html' %}
+
+{% block timer %}
+<div id="circleClock" class="circle-clock">
+    <div id="clockTime" class="clock-time">
+      <h3>
+        <span id="minutes">25</span>:
+        <span id="seconds">00</span>
+      </h3>
+    </div>
+    <div id="clockStatus" class="status">Пуск!</div>
+  </div>
+
+  <div class="setters">
+    <div class="break-setter">
+      <p class="breakText">перерыв</p>
+      <button id="breakPlus">+</button>
+      <span id="breakTime" class="break-time">5 мин</span>
+      <button id="breakMinus">-</button>
+    </div>
+    <div class="work-setter">
+      <p class="workText">сессия</p>
+      <button id="workPlus">+</button>
+      <span id="workTime" class="work-time">25 мин</span>
+      <button id="workMinus">-</button>
+    </div>
+  </div>
+    
+  
+{% endblock timer %}

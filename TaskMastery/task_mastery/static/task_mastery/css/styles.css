@@ -461,7 +461,7 @@
   justify-content: space-around;
   z-index: 2;
 
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.7);
   /* border-bottom: 1px solid rgba(255, 255, 255, 0.3); */
   backdrop-filter: blur(3px);
   box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
@@ -516,7 +516,7 @@
   justify-content: space-around;
   z-index: 2;
 
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.7);
   /* border-right: 1px solid rgba(255, 255, 255, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.3); */
   backdrop-filter: blur(3px);
@@ -552,7 +552,7 @@
   justify-content: space-around;
   z-index: 2;
 
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(3px);
   box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
 }
@@ -600,6 +600,8 @@
   top: 12.5vw;
   width: 900px;
   margin-left: -450px;
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
 }
 
 .current-date {
@@ -634,11 +636,12 @@
   margin-left: -160px;
   backdrop-filter: blur(20px);
   border-radius: 8px;
-  border: 1px solid hsl(156, 51%, 14%);
+  background-color: rgba(0,0,0,0.7);
+  border: none;
     backdrop-filter: blur(3px);
   -webkit-box-shadow: 20px 20px 22px rgba(0,0,0,0.2);
           box-shadow: 20px 20px 22px rgba(0,0,0,0.2);
-          box-shadow: 0px -3px 22px 0px  hsl(156, 51%, 14%) inset;
+          /* box-shadow: 0px -3px 22px 0px  hsl(156, 51%, 14%) inset; */
           /* box-shadow: 0px -3px 22px 0px  rgba(255, 255, 255, 0.3) inset; */
   font-family: 'Roboto',sans-serif;
   font-style: italic;
@@ -654,8 +657,8 @@
           backdrop-filter: blur(20px);
   border-radius: 50%;
   /* margin: 30px auto 20px  auto; */
-  box-shadow: 0px -3px 20px 0px hsl(156, 51%, 14%) inset;
-  border: 1px solid hsl(156, 51%, 14%);
+  box-shadow: 0px -3px 20px 0px hsl(84.55deg 52.38% 32.94%) inset;
+  border: 1px solid hsl(84.55deg 52.38% 32.94%);
 }
 
 .card-profile-img img{
@@ -715,10 +718,10 @@
   padding: 15px;
   margin-bottom: 20px;
   background-color: hsla(156, 51%, 14%, 5%);
-  box-shadow: 0px -3px 60px 0px  hsl(156, 51%, 14%) inset;
-  color: hsl(156, 51%, 75%);
+  box-shadow: 0px -3px 60px 0px  hsl(84.55deg 52.38% 32.94%) inset;
+  color: #ffffff;
   border-radius: 10px;
-  border: 1px solid hsl(156, 51%, 14%);
+  border: 1px solid hsl(84.55deg 52.38% 32.94%);
 }
 
 .btn-edit-profile {
@@ -752,9 +755,8 @@
   height: 150px;
   border-radius: 8px;
   backdrop-filter: blur(3px);
-  box-shadow: 0px -3px 22px 0px hsl(156, 51%, 14%) inset;
-  background: none;
-  border: 2px dashed hsl(156, 51%, 14%); 
+  background-color: rgba(0, 0, 0, 0.7);
+  border: none;
   cursor: pointer;
 }
 
@@ -762,7 +764,7 @@
   font-family: "Roboto", sans-serif;
   font-style: italic;
   color: #ffffff;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 300;
   letter-spacing: 0.7px;
   margin: 5px 0;
@@ -801,10 +803,10 @@
 .btn-cancel-cp {
   padding: 10px;
   background-color: hsla(156, 51%, 14%, 5%);
-  box-shadow: 0px -3px 60px 0px  hsl(156, 51%, 14%) inset;
+  box-shadow: 0px -3px 60px 0px  hsl(84.55deg 52.38% 32.94%) inset;
   color: #ffffff;
   border-radius: 10px;
-  border: 1px solid hsl(156, 51%, 14%);
+  border: 1px solid hsl(84.55deg 52.38% 32.94%);
   cursor: pointer;
 }
 
@@ -818,11 +820,11 @@
   width: 250px;
   padding: 10px;
 
-  border: 1px solid hsl(156, 51%, 14%);
+  border: 1px solid hsl(84.55deg 52.38% 32.94%);
   border-radius: 5000px;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
-  box-shadow: 0px -3px 22px 0px hsl(156, 51%, 14%) inset;
+  box-shadow: 0px -3px 22px 0px hsl(84.55deg 52.38% 32.94%) inset;
   color: #fff;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
@@ -830,6 +832,14 @@
   transition: all 0.2s ease-in-out;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
+
+
+
+
+
+
+
+
 
 @media (min-width: 992px) {
   .logIn:hover {
