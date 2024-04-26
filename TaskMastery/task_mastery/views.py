@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 import datetime, time
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Projects
+from .models import Projects, Profile
 
 
 def register(request):
@@ -104,8 +104,17 @@ class LoginUser(DataMixin, LoginView):
 def profile(request):
     user = request.user
     email = request.user.email
+    profile_data = Profile()
+    info_user = {
+        "user": user,
+        "email": email,
+        "full_name": profile_data.full_name,
+        "city": profile_data.city,
+        "gender": profile_data.gender
+    }
+    
 
-    return render(request, 'task_mastery/profile.html', {"user": user, "email": email})
+    return render(request, 'task_mastery/profile.html', {"user": info_user.items()})
 
 def projects(request):
     if request.method == "POST":

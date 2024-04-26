@@ -5,7 +5,6 @@ const sliderBtnPrev = document.querySelector(".slider-btn-prev");
 
 
 let counter = 0;
-const slider = [];
 
 sliderBtnPrev.classList.add("section-hidden");
 
@@ -40,16 +39,12 @@ displaySection();
 sliderBtnNext.addEventListener("click", () => {
   counter++;
   displaySection();
-  console.log(counter);
   checkSlider();
 });
 
 sliderBtnPrev.addEventListener("click", () => {
   counter--;
   displaySection();
-  console.log(counter);
   checkSlider();
 });
 
-console.log(counter);
-console.log(section.length);

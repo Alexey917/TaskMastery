@@ -6,4 +6,15 @@ class Projects(models.Model):
 
 
 class Profile(models.Model):
-  pass
+  GENDER = [
+    ("Пол", "Мужской"),
+    ("Пол", "Женский"),
+  ]
+
+
+  image = models.ImageField()
+  full_name = models.CharField(max_length=255)
+  birthday = models.DateField()
+  city = models.CharField(max_length=255)
+  gender = models.CharField(max_length=255, choices=GENDER)
+
