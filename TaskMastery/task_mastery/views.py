@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 import datetime, time
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Projects, Profile
+from .models import Users
 
 
 def register(request):
@@ -79,7 +79,6 @@ def account(request):
             if day_week == i:
                 day_week = days[i]
 
-
     user = request.user
 
     return render(request, 'task_mastery/cabinet.html', {"current_date": f"{day_week}, {current_date.day} {date}", "user": user, "greetings": greetings})
@@ -100,21 +99,23 @@ class LoginUser(DataMixin, LoginView):
     def form_invalid(self, form):
         messages.error(self.request,'Неверный логин или пароль')
         return self.render_to_response(self.get_context_data(form=form))
-    
+
+
 def profile(request):
     user = request.user
     email = request.user.email
-    profile_data = Profile()
+    profile_data = Users.objects.all()
     info_user = {
         "user": user,
         "email": email,
         "full_name": profile_data.full_name,
+        "birthday": profile_data.birthday,
         "city": profile_data.city,
         "gender": profile_data.gender
     }
-    
 
     return render(request, 'task_mastery/profile.html', {"user": info_user.items()})
+
 
 def projects(request):
     if request.method == "POST":
